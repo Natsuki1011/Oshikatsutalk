@@ -7,7 +7,7 @@
     <%= form_for(@tweet, :url => { controller:'tweets', action:'create'})do |f| %>
     <%= f.label :投稿内容 %>
      <br>
-        <%= f.text_field :body,size: 140%>
+        <%= f.text_field :body, size: 140%>
       <br>
  <div class="field">
     <%= f.label :image %>
