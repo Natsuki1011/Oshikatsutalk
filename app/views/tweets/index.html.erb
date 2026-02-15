@@ -10,9 +10,12 @@
         <div class="left-container"><%= t.body %></div>
         <div class="right-container">
         
+        <%= link_to t.user.name, user_path(t.user.id) %> 
+       <%= t.user.email %>
+
         <!--ここから-->
         <% if t.image.attached? %>
-            <%= image_tag t.image, size: '250x200'%>
+            <%= image_tag t.image, size: '100x100'%>
         <% end %>
 
         <!--ここまで-->
@@ -21,11 +24,11 @@
       <% if current_user.already_liked?(t) %>
           <%= button_to tweet_like_path(id: t.id, tweet_id: t.id), method: :delete do %>
            <i class="fas fa-heart"></i><%= t.likes.count %>
-          <% end %>
+      <% end %>
       <% else %>
           <%= button_to tweet_likes_path(id: t.id, tweet_id: t.id), method: :post do %>
             <i class="far fa-heart"></i><%= t.likes.count %>
-          <% end %>
+      <% end %>
       <% end %>
   <% else %>
        
@@ -37,12 +40,13 @@
         <%= link_to "編集", edit_tweet_path(t.id) %>
         <%= link_to "削除", tweet_path(t.id), method: :delete %>
       </div>
+    </div>
     <% if t.user.image.attached? %>
-      <%= image_tag  t.user.image, size: '250x200'%>
-      <%= link_to t.user.name, user_path(t.user.id) %> # 追記
+      <%= image_tag  t.user.image, size: '50x50'%>
+      <%= link_to t.user.name, user_path(t.user.id) %> 
     <% end %>
-  <% end %>
-</div>
+ </div>
+<% end %>
 
 <!--ここから-->
 <h3>投稿を検索</h3>
@@ -64,4 +68,3 @@
 
 <%= link_to "新規投稿へ", new_tweet_path %>
 
-</div>

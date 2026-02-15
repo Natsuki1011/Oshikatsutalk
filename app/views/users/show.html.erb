@@ -13,5 +13,16 @@
   <%= t.body %>
 <% end %>
 
+<h2>ユーザーがいいねした投稿一覧</h2>
+<% @user.liked_tweets.each do |t| %>
+  <%= t.user.name %>
+  <%= t.body %>
+<% end %>
+<!-- ここまで-->
 
+<% if @user.image.attached? %>
+     <%= image_tag  @user.image, size: '50x50'%>
+<% end %>
+
+<%= link_to "Tweet一覧に戻る", tweets_path %>
 

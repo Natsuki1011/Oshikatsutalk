@@ -17,6 +17,11 @@
   padding: 0;
   margin: 0;
 }
+* {
+  box-sizing: border-box;
+  font-family: "Arial", "Hiragino Kaku Gothic ProN", sans-serif;
+}
+
 body {
   min-height: 100vh;
   position: relative;
@@ -24,16 +29,19 @@ body {
     Meiryo, "ＭＳ Ｐゴシック", sans-serif;
   display: flex;
   flex-direction: column;
-  background-image: url("background.jpg");
+  background: #ffdede;
   background-size: cover;
+  padding: 20px;
+  text-align: center;
 }
 header {
-  background-color: #00acee;
+  background-color: #ffdede;
   height: 80px;
   font-weight: bold;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 20px;
 }
 header a {
   color: white; 
@@ -42,6 +50,8 @@ header a {
 header h1 {
   color: white;
   margin-left: 20px;
+   font-size: 32px;
+  letter-spacing: 2px;
 }
 .header-list {
   display: flex;
