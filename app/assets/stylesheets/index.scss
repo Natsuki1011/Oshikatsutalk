@@ -34,7 +34,6 @@ h3 {
 }
 .main-box {
   margin: 5px 0;
-  display: flex;
   justify-content: space-between;
 }
 .time {
@@ -49,4 +48,13 @@ span {
   margin: 4px;
   border-radius: 15px;
   color: #666;
+}
+.right-container {
+  display: flex;
+}
+.left-container {
+  display: flex;
+}
+.name-container {
+  display: flex;
 }

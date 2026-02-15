@@ -7,19 +7,20 @@
      <% @tweets.each do |t| %>
       <div class="tweet">
        <div class="main-box">
-        <div class="left-container"><%= t.body %></div>
-        <div class="right-container">
-        
+        <div class="name-container">
+        <% if t.user.image.attached? %>
+        <%= image_tag  t.user.image, size: '50x50'%>
         <%= link_to t.user.name, user_path(t.user.id) %> 
-       <%= t.user.email %>
-
-        <!--ここから-->
+      </div>
+        <div class="left-container">
+        <%= t.body %>
+      </div>
         <% if t.image.attached? %>
             <%= image_tag t.image, size: '100x100'%>
         <% end %>
-
-        <!--ここまで-->
-
+        <% end %>
+        <div class="right-container">
+      
      <% if user_signed_in? %>
       <% if current_user.already_liked?(t) %>
           <%= button_to tweet_like_path(id: t.id, tweet_id: t.id), method: :delete do %>
@@ -40,10 +41,7 @@
         <%= link_to "削除", tweet_path(t.id), method: :delete %>
       </div>
     </div>
-    <% if t.user.image.attached? %>
-      <%= image_tag  t.user.image, size: '50x50'%>
-      <%= link_to t.user.name, user_path(t.user.id) %> 
-    <% end %>
+    
  </div>
 <% end %>
 
