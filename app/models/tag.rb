@@ -4,5 +4,4 @@ validates :name, presence: true
   has_many :tweet_tag_relations, dependent: :destroy
   #Tagsテーブルから中間テーブルを介してArticleテーブルへの関連付け
   has_many :tweets, through: :tweet_tag_relations, dependent: :destroy
-  validates :name, presence: true, uniqueness: true, uniqueness: { case_sensitive: false }
 end

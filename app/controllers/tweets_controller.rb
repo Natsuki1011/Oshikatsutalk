@@ -26,8 +26,7 @@ class TweetsController < ApplicationController
       end
     end
     if params[:tag]
-      tag_name = params[:tag].strip
-      @new_tag = Tag.find_or_create_by(name: params[:tag])
+      Tag.create(name: params[:tag])
     end
  end
 
