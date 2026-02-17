@@ -49,15 +49,6 @@ class TweetsController < ApplicationController
     redirect_to action: :index
   end
 
- def reset_tags
-  Tag.destroy_all
-  render plain: "Tags deleted"
- end
-
-def seed_tags
-  load Rails.root.join("db/seeds.rb")
-  render plain: "Seed done"
-end
   private
   def tweet_params
     params.require(:tweet).permit(:body, :image, tag_ids: [])
