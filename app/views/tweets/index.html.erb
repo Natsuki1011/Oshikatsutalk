@@ -26,8 +26,8 @@
 <%= form_tag({controller:"tweets",action:"index"}, method: :get) do %>
     <div class="tag-list">
      <% Tag.all.each do |t| %>
-        <%= check_box :tag_ids, t.name %>
-        <span><%= t.name %></span>
+        <%= check_box_tag "tag_ids[#{t.name}]", "1" %>
+        <span><%= t.name %></span> 
         </label>
     <% end %>
     </div>

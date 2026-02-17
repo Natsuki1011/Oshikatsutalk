@@ -7,5 +7,10 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+Tag.destroy_all
 Tag.create([
+  { name: '中島裕翔' },
+  { name: '柏木悠' },
+  { name: '新木優子' },
+  { name: '桜木雅哉' }
 ])

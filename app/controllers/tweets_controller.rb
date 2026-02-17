@@ -16,15 +16,7 @@ class TweetsController < ApplicationController
        end
        @tweets.uniq!
       end
-      if params[:tag_ids]
-       @tweets = []
-       params[:tag_ids].each do |key, value|
-        if value == "1"
-          tag_tweets = Tag.find_by(name: key).tweets
-          @tweets = @tweets.empty? ? tag_tweets : @tweets & tag_tweets
-        end
-      end
-    end
+      
     if params[:tag]
       Tag.create(name: params[:tag])
     end
