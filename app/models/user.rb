@@ -14,4 +14,5 @@ class User < ApplicationRecord
   def already_liked?(tweet)
     self.likes.exists?(tweet_id: tweet.id)
   end
+  has_one_attached :image
 end

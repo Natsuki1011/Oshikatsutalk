@@ -108,3 +108,37 @@ img {
   border-radius: 20px;
   box-shadow: 0 5px 15px rgba(255, 102, 204, 0.3);
 }
+.header-main {
+   position: relative;
+  overflow: hidden;
+  height: 60vh;
+}
+.slider {
+  display: flex;
+  animation: slide 25s linear infinite;
+}
+.slider img {
+  width: 60vh;
+  height: 60vh;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-240vh);
+  }
+}
+.catchcopy {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 60px;
+  color: white;
+  text-shadow: 0 0 15px rgba(0,0,0,0.7);
+  z-index: 2;
+}
+

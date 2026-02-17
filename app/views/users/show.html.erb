@@ -21,7 +21,9 @@
 <!-- ここまで-->
 
 <% if @user.image.attached? %>
-     <%= image_tag  @user.image, size: '50x50'%>
+     <%= image_tag  @user.image, class: "avatar", size: '50x50'%>
+<% else %>
+  <%= image_tag "default_icon.png", class: "avatar" %>
 <% end %>
 
 <%= link_to "Tweet一覧に戻る", tweets_path %>

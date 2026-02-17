@@ -26,7 +26,8 @@ class TweetsController < ApplicationController
       end
     end
     if params[:tag]
-      Tag.create(name: params[:tag])
+      tag_name = params[:tag].strip
+      @new_tag = Tag.find_or_create_by(name: params[:tag])
     end
  end
 
@@ -54,5 +55,4 @@ class TweetsController < ApplicationController
   def tweet_params
     params.require(:tweet).permit(:body, :image, tag_ids: [])
   end
-
 end
