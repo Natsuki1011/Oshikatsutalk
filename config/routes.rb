@@ -10,5 +10,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
  end
  root 'tweets#index'
+ get "reset_tags_12345", to: "tweets#reset_tags"
+ get "seed_tags_12345", to: "tweets#seed_tags"
  resources :users, only: [:show]
 end
