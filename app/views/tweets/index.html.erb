@@ -91,7 +91,7 @@
     <% end %>
         <%= t.created_at %>
         <%= link_to "詳細", tweet_path(t.id) %>
-        <%= link_to "削除", tweet_path(t.id), method: :delete %>
+        <%= button_to "削除", tweet_path(t.id), method: :delete %>
       </div>
     </div>
     
