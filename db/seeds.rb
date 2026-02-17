@@ -8,9 +8,9 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 Tag.create([
-  { name: 'タグ1' },
-  { name: 'タグ2' },
-  { name: 'タグ3' },
-  { name: 'タグ4' },
-  { name: 'タグ5' }
+  { name: '中島裕翔' },
+  { name: '柏木悠' },
+  { name: '新木優子' },
+  { name: '桜木雅哉' },
+  { name: '吉川愛' }
 ])
